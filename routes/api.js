@@ -17,14 +17,22 @@ router.get("/getall", async (req, res) => {
 });
 
 // Getting one
-router.get("/:id", (req, res) => {});
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
+  Message.findById(id, (err, message) => {
+    if (err) {
+      res.status(500).json({ message: err });
+    } else {
+      res.status(200).json(message);
+    }
+  });
+});
 
 // Creating one
 router.post("/add", async (req, res) => {
   const message = new Message({
     name: req.body.name,
     message: req.body.message,
-    votes: req.body.votes,
   });
   try {
     const newMessage = await message.save();
@@ -35,9 +43,49 @@ router.post("/add", async (req, res) => {
 });
 
 // Updating one
-router.patch("/update/:id", (req, res) => {});
+router.patch("/update/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const update = req.body;
+    const options = { new: true };
+    const result = await Message.findByIdAndUpdate(id, update, options);
+    res.send(result);
+  } catch (err) {
+    res.status(500).json("Db error ", err);
+  }
+});
+
+// Update votes
+router.patch("/:id/vote", (req, res) => {
+  const { id } = req.params;
+  const { vote } = req.body;
+
+  Message.findById(id).then((message) => {
+    console.log(message.votes);
+    if (vote === "up") {
+      message.votes++;
+    } else if (vote === "down") {
+      message.votes--;
+    } else {
+      res.status(400).json({ message: "Bad request" });
+    }
+    message.save().then((message) => {
+      res.status(201).json({
+        message: "Votes updated",
+        message,
+      });
+    });
+  });
+});
 
 // Deleting one
-router.delete("/delete/:id", (req, res) => {});
+router.delete("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  Message.findByIdAndDelete(id, (err) => {
+    if (err) res.status(500).json("Database error", err);
+    console.log("Message is deleted successfully");
+    res.json("Message is deleted successfully");
+  });
+});
 
 module.exports = router;
