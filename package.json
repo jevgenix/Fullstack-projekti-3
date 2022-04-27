@@ -1,0 +1,28 @@
+{
+  "name": "fullstack-projekti-3",
+  "version": "1.0.0",
+  "description": "REST-API for React project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jevgenix/Fullstack-projekti-3.git"
+  },
+  "author": "jevgenix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jevgenix/Fullstack-projekti-3/issues"
+  },
+  "homepage": "https://github.com/jevgenix/Fullstack-projekti-3#readme",
+  "dependencies": {
+    "express": "^4.18.0",
+    "mongoose": "^6.3.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
