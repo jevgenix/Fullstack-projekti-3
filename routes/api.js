@@ -55,6 +55,25 @@ router.patch("/update/:id", async (req, res) => {
   }
 });
 
+// adding comment
+router.put("/comment/:id", async (req, res) => {
+  const id = req.params.id;
+  const comment = req.body;
+  const query = Message.findByIdAndUpdate(
+    id,
+    { $push: { comments: comment } },
+    { safe: true, upsert: true, new: true }
+  ).catch((err) => {
+    console.log(err);
+    res.status(500).json({
+      message: err.message,
+    });
+  });
+
+  console.log(comment);
+  res.send(query);
+});
+
 // Update votes
 router.patch("/:id/vote", (req, res) => {
   const { id } = req.params;

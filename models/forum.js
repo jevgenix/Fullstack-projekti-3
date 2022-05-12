@@ -14,10 +14,15 @@ const forumSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  comments: [
+    {
+      type: Object,
+    },
+  ],
   votes: {
     type: Number,
     default: 0,
   },
 });
 
-module.exports = mongoose.model("forum", forumSchema);
+module.exports = mongoose.model("Post", forumSchema);
