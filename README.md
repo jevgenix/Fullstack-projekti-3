@@ -17,3 +17,5 @@
 ### 6. https://rest-api-project-3.herokuapp.com/api/:id/vote find table by id and add or remove one vote
 
 ### 7. https://rest-api-project-3.herokuapp.com/api/delete/:id find table by id and remove it
+
+### link to heroku: https://rest-api-project-3.herokuapp.com/api/getall
