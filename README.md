@@ -4,18 +4,18 @@
 
 ## Router information
 
-### 1. https://rest-api-project-3.herokuapp.com/api/getall get all tables
+#### 1. https://rest-api-project-3.herokuapp.com/api/getall get all tables
 
-### 2. https://rest-api-project-3.herokuapp.com/api/:id find table by id
+#### 2. https://rest-api-project-3.herokuapp.com/api/:id find table by id
 
-### 3. https://rest-api-project-3.herokuapp.com/api/add add new table
+#### 3. https://rest-api-project-3.herokuapp.com/api/add add new table
 
-### 4. https://rest-api-project-3.herokuapp.com/api/update/:id find table by id and update it
+#### 4. https://rest-api-project-3.herokuapp.com/api/update/:id find table by id and update it
 
-### 5. https://rest-api-project-3.herokuapp.com/api/comment/:id find table by id and add new comment to the comment array
+#### 5. https://rest-api-project-3.herokuapp.com/api/comment/:id find table by id and append new comment into comments array
 
-### 6. https://rest-api-project-3.herokuapp.com/api/:id/vote find table by id and add or remove one vote
+#### 6. https://rest-api-project-3.herokuapp.com/api/:id/vote find table by id and add or remove one vote
 
-### 7. https://rest-api-project-3.herokuapp.com/api/delete/:id find table by id and remove it
+#### 7. https://rest-api-project-3.herokuapp.com/api/delete/:id find table by id and remove it
 
-### link to heroku: https://rest-api-project-3.herokuapp.com/api/getall
+#### link to heroku: https://rest-api-project-3.herokuapp.com/api/getall
