@@ -4,14 +4,16 @@
 
 ## Router information
 
-### 1. localhost:3000/add Creates new JSON
+### 1. https://rest-api-project-3.herokuapp.com/api/getall get all tables
 
-### 2.
+### 2. https://rest-api-project-3.herokuapp.com/api/:id find table by id
 
-### 3.
+### 3. https://rest-api-project-3.herokuapp.com/api/add add new table
 
-### 4.
+### 4. https://rest-api-project-3.herokuapp.com/api/update/:id find table by id and update it
 
-### 5.
+### 5. https://rest-api-project-3.herokuapp.com/api/comment/:id find table by id and add new comment to the comment array
 
-### 6.
+### 6. https://rest-api-project-3.herokuapp.com/api/:id/vote find table by id and add or remove one vote
+
+### 7. https://rest-api-project-3.herokuapp.com/api/delete/:id find table by id and remove it
