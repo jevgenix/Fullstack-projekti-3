@@ -70,6 +70,7 @@ router.put("/comment/:id", async (req, res) => {
     });
   });
 
+  // test
   console.log(comment);
   res.send(query);
 });
