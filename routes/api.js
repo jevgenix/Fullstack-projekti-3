@@ -31,7 +31,6 @@ router.get("/:id", (req, res) => {
 // Creating one
 router.post("/add", async (req, res) => {
   const message = new Message({
-    name: req.body.name,
     message: req.body.message,
   });
   try {
