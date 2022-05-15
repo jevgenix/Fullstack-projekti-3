@@ -32,6 +32,7 @@ router.get("/:id", (req, res) => {
 router.post("/add", async (req, res) => {
   const message = new Message({
     message: req.body.message,
+    userId: req.body.userId,
   });
   try {
     const newMessage = await message.save();
@@ -103,7 +104,7 @@ router.delete("/delete/:id", (req, res) => {
   Message.findByIdAndDelete(id, (err) => {
     if (err) res.status(500).json("Database error", err);
     console.log("Message is deleted successfully");
-    res.json("Message is deleted successfully");
+    res.status(204).json("Message is deleted successfully");
   });
 });
 

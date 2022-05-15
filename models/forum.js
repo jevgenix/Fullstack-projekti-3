@@ -6,6 +6,10 @@ const forumSchema = new mongoose.Schema({
     required: true,
     minlength: 3,
   },
+  userId: {
+    type: Object,
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now,
